@@ -1,0 +1,146 @@
+https://github.com/manoj-smoothstack/java_training/tree/main/SpringBatch/assignments/Day1
+
+
+
+
+https://github.com/sessums-smoothstack/SmoothStack
+
+
+
+1. Find the problem with the following code and fix it.
+
+    // wrong
+    import org.springframework.boot.autoconfigure.SpringApplication;
+    import org.springframework.batch.core.configuration.annotate.EnableBatchProcessing;
+    
+    @EnableBatchProcessing
+    @SpringApplication
+    public class MyApplication {
+        public static void main(String[] args){
+            SpringApplication.run(MyApplication, args);
+        }
+    }
+
+
+    // correct
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    import org.springframework.batch.core.configuration.annotatation.EnableBatchProcessing;
+    
+    @EnableBatchProcessing
+    @SpringBootApplication
+    public class MyApplication {
+        public static void main(String[] args){
+            SpringApplication.run(MyApplication.class, args);
+        }
+    }
+
+
+
+
+
+
+
+
+
+### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *
+
+
+
+2. Find the problem with the following code and fix it.
+    
+    // wrong
+    import org.springframework.context.annotation.job;
+
+    @Job
+    // wrong
+    public job helloWorldJob(){ // Job is an interface
+        return jobs.get("helloWorldJob").start(step1()).build();
+    }
+
+
+    // right 
+    import org.springframework.context.annotation.Bean;
+    
+    @Bean
+    public Job helloWorldJob(){ // Job is an interface
+        return jobs.get("helloWorldJob").start(step1()).build();
+    }
+
+
+
+    
+
+
+### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *
+
+
+3. Identify the correct statements. (actually a multiple choice, select the correct answer)
+
+    A. A JobInstance is a single attempt to run a job.
+        - F
+
+    Correct Answer B. A JobBuilder needs to be implemented by a user in order to create jobs.
+        - T
+
+    C. The JobExecutionListener object is optional.
+        - F
+
+    D. A task consists of tasklets.
+        - F
+
+
+
+
+
+### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *
+
+
+4. What is this definition referring to?
+
+    It is an enum, which can take values of continuable or finished. The continuable indicates that processing can continue.
+    
+
+
+    Answer: It is refferring to "RepeatStatus" inside of the Tasklet definition
+
+
+
+
+
+
+
+### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *
+
+
+
+5. Find the problem with the following code and fix it.
+
+    // wrong
+    public Tasklet creditTasklet(){
+        return (new Tasklet() (
+            @Override
+            public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext){
+                // processing credit transction!
+                return RepeatStatus.FINISHED;
+            }
+        ));
+    }
+
+
+    // right
+    public Tasklet creditTasklet(){
+        return (new Tasklet() {
+            @Override
+            public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception{
+                // processing credit transction!
+                return RepeatStatus.FINISHED;
+            }
+        });
+    }
+
+
+
+
+
+
+### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *       ### \ ### / ### *
