@@ -1,0 +1,21 @@
+CREATE TABLE transactions (
+	id int NOT NULL auto_increment,
+	date varchar(256) NOT NULL,
+    county varchar(256) NOT NULL,
+    area varchar(256) NOT NULL,
+    number varchar(256) NOT NULL,
+    totalArea varchar(256) NOT NULL,
+    averageArea varchar(256) NOT NULL,
+    totalTransactionAmount varchar(256) NOT NULL,
+    minimumTransactionAmount varchar(256) NOT NULL,
+    maximumTransactionAmount varchar(256) NOT NULL,
+    unitPriceMinimum varchar(256) NOT NULL,
+    unitPriceMaximum varchar(256) NOT NULL,
+    unitPriceMedian varchar(256) NOT NULL,
+    unitPriceAverage varchar(256) NOT NULL,
+    unitPriceStandardDeviation varchar(256) NOT NULL,
+    month varchar(256) NOT NULL,
+    year varchar(256) NOT NULL,
+    indx varchar(256) NOT NULL,
+    PRIMARY KEY (id)
+);
