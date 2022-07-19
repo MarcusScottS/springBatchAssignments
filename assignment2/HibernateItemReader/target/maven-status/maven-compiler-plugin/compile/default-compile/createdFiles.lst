@@ -1,0 +1,7 @@
+com/smoothstack/springbatch/HibernateCursorItemReader/writer/ConsoleItemWriter.class
+com/smoothstack/springbatch/HibernateCursorItemReader/listener/HwJobExecutionListener.class
+com/smoothstack/springbatch/HibernateCursorItemReader/model/Student.class
+com/smoothstack/springbatch/HibernateCursorItemReader/HibernateItemReaderApplication.class
+com/smoothstack/springbatch/HibernateCursorItemReader/listener/HwStepExecutionListener.class
+com/smoothstack/springbatch/HibernateCursorItemReader/config/BatchConfiguration.class
+com/smoothstack/springbatch/HibernateCursorItemReader/model/Transaction.class
